@@ -9,120 +9,122 @@
     <title>Document</title>
 </head>
 <body>    
-    <header>
-        <div class="container-fluid">
-          <!--#region Barra Superior-->      
-            <div class="row barraSuperior">
-              <div class="col-xs-12 col-lg-12">
-                <a href="#">Sucursales</a>
-                <a href="#">Como Comprar?</a>
+  <header>
+    <div class="container-fluid">
+      <!--#region Barra Superior-->      
+        <div class="row barraSuperior">
+          <div class="col-xs-12 col-lg-12">
+            <a href="#">Sucursales</a>
+            <a href="#">Como Comprar?</a>
+          </div>
+        </div>
+      <!--#endregion-->
+
+      <!--#region Barra Busqueda-->
+        <div class="row SearchBar">
+          <div class="col-md-6 col-lg-3 logoSearchBar justify-content-center">
+            <a href="/">
+              <img src="/resources/LogoNavBar.jpg" width="150" height="65px">
+            </a>
+          </div>
+
+          <div class="d-block d-sm-block d-md-none col-md-6 carritoSM">
+            <div class="">
+              <a href="/views/CarritoView.html" >
+                <img src="/resources/CarritoNavBar.jpg" width="50" height="50px"><br>
+                <h9 >Ver Carrito</h9>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-md-12 col-lg-6 ">
+            <div class="input-group mb-3 ">
+              <input type="text" class="form-control busqueda" placeholder="¿ Que Estas Buscando ?" aria-label="¿ Que Estas Buscando ?" aria-describedby="basic-addon2">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary botonBusqueda" type="button">Buscar</button>
               </div>
             </div>
-          <!--#endregion-->
-  
-          <!--#region Barra Busqueda-->
-            <div class="row SearchBar">
-              <div class="col-md-6 col-lg-3 logoSearchBar justify-content-center">
-                <a href="/">
-                  <img src="/resources/LogoNavBar.jpg" width="150" height="65px">
-                </a>
-              </div>
-    
-              <div class="d-block d-sm-block d-md-none col-md-6 carritoSM">
-                <div class="">
-                  <a href="/views/CarritoView.html" >
-                    <img src="/resources/CarritoNavBar.jpg" width="50" height="50px"><br>
-                    <h9 >Ver Carrito</h9>
-                  </a>
-                </div>
-              </div>
-    
-              <div class="col-md-12 col-lg-6 ">
-                <div class="input-group mb-3 ">
-                  <input type="text" class="form-control busqueda" placeholder="¿Que estas buscando?" aria-label="¿Que estas buscando ?" aria-describedby="basic-addon2">
-                  <div class="input-group-append">
-                    <button class="btn btn-outline-secondary botonBusqueda" type="button">Buscar</button>
-                  </div>
-                </div>
-              </div>
-    
-              <div class="d-none d-sm-none d-md-block col-lg-3 carritoPC ">
-                <div class="contenedorCarrito">
-                  <a  href="/views/CarritoView.html" >
-                    <img src="/resources/CarritoNavBar.jpg" width="50" height="50px"><br>
-                    <h9 >Ver Carrito</h9>
-                  </a>
-                </div>
-              </div>    
+          </div>
+
+          <div class="d-none d-sm-none d-md-block col-lg-3 carritoPC ">
+            <div class="contenedorCarrito">
+              <a  href="/views/CarritoView.html" >
+                <img src="/resources/CarritoNavBar.jpg" width="50" height="50px"><br>
+                <h9 >Ver Carrito</h9>
+              </a>
             </div>
-          <!--#endregion-->
-        </div>  
-        <!--#region Categorias-->
-          <nav class="navbar navbar-expand-md navbar-light bg-light">
-            <!-- Brand -->
-            <a class="navbar-brand" href="#">Catalogo</a>
-            <!-- Toggler/collapsibe Button -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <!-- Navbar links -->
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-              <ul class="navbar-nav">
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                    Belleza
-                  </a>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Belleza 1</a>
-                    <a class="dropdown-item" href="#">Belleza 2</a>
-                    <a class="dropdown-item" href="#">Belleza 3</a>
-                  </div>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                    Salud
-                  </a>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Salud 1</a>
-                    <a class="dropdown-item" href="#">Salud 2</a>
-                    <a class="dropdown-item" href="#">Salud 3</a>
-                  </div>
-                </li>              
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                    Maquillaje
-                  </a>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Maquillaje 1</a>
-                    <a class="dropdown-item" href="#">Maquillaje 2</a>
-                    <a class="dropdown-item" href="#">Maquillaje 3</a>
-                  </div>
-                </li>              
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                    Maternidad y Bebes
-                  </a>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Maternidad y Bebes 1</a>
-                    <a class="dropdown-item" href="#">Maternidad y Bebes 2</a>
-                    <a class="dropdown-item" href="#">Maternidad y Bebes 3</a>
-                  </div>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                    Cuidado Corporal
-                  </a>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Cuidado Corporal 1</a>
-                    <a class="dropdown-item" href="#">Cuidado Corporal 2</a>
-                    <a class="dropdown-item" href="#">Cuidado Corporal 3</a>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        <!--#endregion-->
-    </header>
+          </div>    
+        </div>
+      <!--#endregion-->
+    </div>  
+
+    <!--#region Categorias-->      
+      <nav class="navbar navbar-expand-md navbar-light bg-light">
+      <div class="container ">
+        <!-- Brand -->
+        <a class="navbar-brand" href="#">Catalogo</a>
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse " id="collapsibleNavbar">
+          <ul class="navbar-nav ">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle "  href="#" id="navbardrop" data-toggle="dropdown">
+                Belleza
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Belleza 1</a>
+                <a class="dropdown-item" href="#">Belleza 2</a>
+                <a class="dropdown-item" href="#">Belleza 3</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                Salud
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Salud 1</a>
+                <a class="dropdown-item" href="#">Salud 2</a>
+                <a class="dropdown-item" href="#">Salud 3</a>
+              </div>
+            </li>              
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                Maquillaje
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Maquillaje 1</a>
+                <a class="dropdown-item" href="#">Maquillaje 2</a>
+                <a class="dropdown-item" href="#">Maquillaje 3</a>
+              </div>
+            </li>              
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                  Bebes
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Maternidad y Bebes 1</a>
+                <a class="dropdown-item" href="#">Maternidad y Bebes 2</a>
+                <a class="dropdown-item" href="#">Maternidad y Bebes 3</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                Cuidado Corporal
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Cuidado Corporal 1</a>
+                <a class="dropdown-item" href="#">Cuidado Corporal 2</a>
+                <a class="dropdown-item" href="#">Cuidado Corporal 3</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      </nav>
+  </header>
     <!--#region Carrito-->
         <section>
             <!--#region Imagen Header-->
@@ -163,11 +165,81 @@
                                             <th scope="col">Precio Unitario</th>
                                             <th scope="col">Cantidad</th>
                                             <th scope="col">Precio Total</th>
-                                            <th scope="col" ></th>
+                                            <th scope="col"></th>
                                             </tr>
                                     </thead>
-                                    <tbody id ="productos"><!--ACA TENES QUE INSERTAR CON DOOM LOS TR-->
-                                                                    
+                                    <tbody><!--ACA TENES QUE INSERTAR CON DOOM LOS TR-->
+                                        <tr><!--esto-->
+                                            <td>
+                                                <img src="/resources/FotoProducto.jpg" alt="..." class="img-thumbnail">   
+                                            </td>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <h4>Vichy</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <h9>Base dermabled SPF 35 x 30ml</h4>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <h4>$1850</h4>
+                                            </td>
+                                            <td>
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <button class="botonCustomCarrito botonCarritoMM" type="button">-</button>
+                                                        <h4>1</h4>
+                                                        <button class="botonCustomCarrito botonCarritoMM" type="button">+</button>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <h4>$1850</h4>
+                                            </td>
+                                            <td>
+                                                <a href="#">X</a>
+                                            </td>
+                                        </tr><!--esto-->
+
+                                        <tr><!--esto-->
+                                            <td>
+                                                <img src="/resources/FotoProducto.jpg" alt="..." class="img-thumbnail">   
+                                            </td>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <h4>Vichy</h4>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <h9>Base dermabled SPF 35 x 30ml</h4>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <h4>$1850</h4>
+                                            </td>
+                                            <td>
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <button class="botonCustomCarrito botonCarritoMM" type="button">-</button>
+                                                        <h4>1</h4>
+                                                        <button class="botonCustomCarrito botonCarritoMM" type="button">+</button>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <h4>$1850</h4>
+                                            </td>
+                                            <td>
+                                                <a href="#">X</a>
+                                            </td>
+                                        </tr><!--esto-->                                  
                                     </tbody>
                                 </table>
                             </div>
@@ -191,8 +263,24 @@
             <!--#endregion-->
         </section>
     <!--#endregion-->
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr>
+    <footer>
+        <div class="row barraSuperior">
+            <div class="col-xs-12 col-lg-12">
+              <a href="#">Sucursales</a>
+              <a href="#">Como Comprar?</a>
+            </div>
+          </div>
+    </footer>
         
-    <script src="/js/Carrito.js" crossorigin="anonymous"></script>
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

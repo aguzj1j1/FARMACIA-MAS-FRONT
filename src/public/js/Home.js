@@ -3,5 +3,6 @@ function Initializer(){
 }
 
 function getCarrito(){
+    debugger;
     document.getElementById("CarritoHTML").style.visibility = 'visible';
 }

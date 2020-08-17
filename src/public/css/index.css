@@ -109,3 +109,6 @@
 .CarritoHTML{
     width: 300px;
 }
+.dropdown:hover>.dropdown-menu {
+    display: block;
+  }

@@ -1,0 +1,52 @@
+[
+    {
+        "Producto":"vichy",
+        "descripcion":"tal y tal cosa",
+        "img":"/resources/FotoProducto.jpg",
+        "precio":"150",
+        "precioTotal":"150",
+        "cantidad":"4",
+        "id":"1",
+        "valorId":"2",
+        "precioProducto":"15615",
+        "idEliminar":"324324"
+    },
+    {
+        "Producto":"Ritrama",
+        "descripcion":"tal y tal cosa1",
+        "img":"/resources/FotoProducto.jpg",
+        "precio":"200",
+        "precioTotal":"200",
+        "cantidad":"1",
+        "id":"2",
+        "valorId":"4",
+        "precioProducto":"15614324",
+        "idEliminar":"654651"
+    },
+    {
+        "Producto":"CaviaHue",
+        "descripcion":"tal y tal cosa2",
+        "img":"/resources/FotoProducto.jpg",
+        "precio":"300",
+        "precioTotal":"300",
+        "cantidad":"1",
+        "id":"3",
+        "valorId":"5"        ,
+        "precioProducto":"53543",
+        "idEliminar":"65467"
+    },
+    {
+        "Producto":"Fosfovita",
+        "descripcion":"tal y tal cosa3",
+        "img":"/resources/FotoProducto.jpg",
+        "precio":"400",
+        "precioTotal":"400",
+        "cantidad":"1",
+        "id":"4",
+        "valorId":"7",
+        "precioProducto":"5354334325",
+        "idEliminar":"134545"
+    }
+    
+
+]

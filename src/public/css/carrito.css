@@ -88,3 +88,6 @@
 .botonDownBar2{
     margin-right: 40px;
 }
+.dropdown:hover>.dropdown-menu {
+    display: block;
+  }

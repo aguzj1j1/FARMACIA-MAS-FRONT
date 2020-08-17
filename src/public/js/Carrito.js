@@ -18,14 +18,12 @@ function cargarProductosCarrito(contenidoJson, cargoCarrito) {
     var categoria = document.querySelector('#productos');
 
     var total = 0;
-    console.log(contenidoJson);
     if (cargoCarrito) {
         categoria.innerHTML = ''
     }
     for (let item of contenidoJson) {
         //   total = Number(total) + totalPorProductos(Number(item.cantidad),Number(item.precio));
         var totalProductos = totalPorProductos(Number(item.cantidad), Number(item.precio));
-        console.log(totalProductos)
         categoria.innerHTML += `
                 <tr><!--esto-->
                     <td>
@@ -59,7 +57,7 @@ function cargarProductosCarrito(contenidoJson, cargoCarrito) {
                             <h4 id="${item.precioProducto}">$${totalProductos > item.precio ? totalProductos : item.precio}</h4>
                         </td>
                         <td>
-                            <a href="#" onClick="eliminarProducto(${item.idEliminar})">X</a>
+                            <a  onClick="eliminarProducto(${item.idEliminar})">X</a>
                         </td>
                     </tr><!--esto-->`
     }
@@ -72,24 +70,10 @@ function cargarTotalesCarrito(actualizados) {
     for (let item of contenidoJson) {
         total = Number(total) + totalPorProductos(Number(item.cantidad), Number(item.precio));
     }
-    //if (!actualizados){
         var totalCarrito = document.querySelector('#totalCarrito');
         
         totalCarrito.innerHTML = `<h4 id="totalCarrito">Total $${Number(total)}</h4>
-                                   <button type="button id="siguientePaso" class=" btn botonCustomCarrito ">Siguiente Paso</button>`
-  //  }else{
-        var totalCarritoActualizado = document.getElementById("totalCarrito");
-        // var objTotalCarrito = { c: total }
-        // var c = new Binding({
-        //     object: objTotalCarrito,
-        //     property: "c"
-        // })
-        // c.addBinding(totalCarritoActualizado, "value", "keyup")
-        // c.addBinding(totalCarritoActualizado, "innerHTML")
-
-    //}
-
-    
+                                   <button type="button id="siguientePaso" class=" btn botonCustomCarrito ">Siguiente Paso</button>`   
 }
 
 class producto {
@@ -115,13 +99,11 @@ function restar(id) {
         objeto.cantidad = objeto.cantidad - 1;
         var total = totalPorProductos(objeto.cantidad, objeto.precio);
     }
-    console.log(cantidad)
     if (objeto.cantidad == 0) {
         contenidoJson = contenidoJson.filter(data => data.id != objeto.id);
-        console.log(contenidoJson)
         cargarProductosCarrito(contenidoJson, true);
     } else {
-        contenidoJson.filter(data => data.id == id ? data.cantidad = objeto.cantidad : data.cantidad = objeto.cantidad);
+        contenidoJson.filter(data => data.id == id ? data.cantidad = objeto.cantidad : data.cantidad = data.cantidad);
         var cantidadProducto = document.getElementById(objeto.valorId)
         var objCantidad = { a: objeto.cantidad }
         var a = new Binding({
@@ -144,21 +126,20 @@ function restar(id) {
     }
 }
 function sumar(id) {
-    console.log(id)
     var filter = contenidoJson.filter(data => data.id == id)
     var cantidad = 0;
+    var objeto;
     for (let f of filter) {
-        var objeto = new producto(f.producto, f.descripcion, f.img, f.precio, f.precioTotal, f.cantidad, f.id, f.valorId, f.precioProducto);
+        debugger;
+         objeto = new producto(f.Producto, f.descripcion, f.img, f.precio, f.precioTotal, f.cantidad, f.id, f.valorId, f.precioProducto);
     }
     if (objeto.cantidad > 0) {
         objeto.cantidad = Number(objeto.cantidad) + 1  //objeto.cantidad + 1;
-        console.log(cantidad);
         var total = totalPorProductos(objeto.cantidad, objeto.precio);
     }
-    contenidoJson.filter(data => data.id == id ? data.cantidad = objeto.cantidad : data.cantidad = objeto.cantidad);
+    contenidoJson.filter(data => data.id == id ? data.cantidad = objeto.cantidad : data.cantidad = data.cantidad);
     var cantidades = document.getElementById(objeto.valorId);
     var totalProducto = document.getElementById(objeto.precioProducto);
-    console.log(document.getElementById(objeto.precioProducto))
     var objCantidad = { a: objeto.cantidad }
     var a = new Binding({
         object: objCantidad,
@@ -186,7 +167,6 @@ function totalPorProductos(cantidad, precio) {
 }
 function eliminarProducto(idEliminar) {
     contenidoJson = contenidoJson.filter(data => data.idEliminar != idEliminar);
-    console.log(contenidoJson.filter(data => data.idEliminar != idEliminar))
     cargarProductosCarrito(contenidoJson, true);
 }
 function Binding(b) {

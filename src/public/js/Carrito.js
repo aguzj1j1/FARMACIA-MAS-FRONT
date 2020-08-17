@@ -103,13 +103,13 @@ function restar(id) {
         contenidoJson.filter(data => data.id == id ? data.cantidad = objeto.cantidad : data.cantidad = data.cantidad);
         var cantidadProducto = document.getElementById(objeto.valorId)
         var totalProducto = document.getElementById(objeto.precioProducto);
-        prueba(cantidadProducto,objeto.cantidad);
-        prueba(totalProducto,total);
+        bindeo(cantidadProducto,objeto.cantidad);
+        bindeo(totalProducto,total);
         cargarTotalesCarrito(true);
     }
 }
 
-function prueba(element,objeto){
+function bindeo(element,objeto){
     var objCantidad = { a: objeto}
         var a = new Binding({
             object: objCantidad,
@@ -133,8 +133,8 @@ function sumar(id) {
     contenidoJson.filter(data => data.id == id ? data.cantidad = objeto.cantidad : data.cantidad = data.cantidad);
     var cantidades = document.getElementById(objeto.valorId);
     var totalProducto = document.getElementById(objeto.precioProducto);
-    prueba(cantidades,objeto.cantidad );
-    prueba(totalProducto,total);
+    bindeo(cantidades,objeto.cantidad );
+    bindeo(totalProducto,total);
     cargarTotalesCarrito(true);
 }
 function totalPorProductos(cantidad, precio) {

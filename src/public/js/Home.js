@@ -3,11 +3,8 @@ function Initializer(){
 }
 
 function getCarrito(){
-    debugger;
     document.getElementById("CarritoHTML").style.visibility = 'visible';
 }
-
-
 
 document.getElementById("nextCarruselCards1").addEventListener("click", function() {
     document.getElementById('nextCarruselCardButton1').click();

@@ -12,8 +12,7 @@ function cargarProductosDesdeJson() {
         .catch(error => {
             console.log(error);
         })
-};
-
+}
 function cargarProductosCarrito(contenidoJson, cargoCarrito) {
     var categoria = document.querySelector('#productos');
 
@@ -61,9 +60,7 @@ function cargarProductosCarrito(contenidoJson, cargoCarrito) {
                         </td>
                     </tr><!--esto-->`
     }
-    cargarTotalesCarrito(false)
-    // totalCarrito.innerHTML =`<h4>Total $${total}</h4>
-    //               <button type="button" class=" btn botonCustomCarrito ">Siguiente Paso</button>`
+    cargarTotalesCarrito(false);
 }
 function cargarTotalesCarrito(actualizados) {
     var total=0;
@@ -79,14 +76,14 @@ function cargarTotalesCarrito(actualizados) {
 class producto {
     constructor(producto, descripcion, img, precio, precioTotal, cantidad, id, valorId, precioProducto) {
         this.producto = producto,
-            this.descripcion = descripcion,
-            this.img = img,
-            this.precio = precio,
-            this.precioTotal = precioTotal,
-            this.cantidad = cantidad,
-            this.id = id,
-            this.valorId = valorId,
-            this.precioProducto = precioProducto
+        this.descripcion = descripcion,
+        this.img = img,
+        this.precio = precio,
+        this.precioTotal = precioTotal,
+        this.cantidad = cantidad,
+        this.id = id,
+        this.valorId = valorId,
+        this.precioProducto = precioProducto
     }
 }
 function restar(id) {
@@ -105,61 +102,40 @@ function restar(id) {
     } else {
         contenidoJson.filter(data => data.id == id ? data.cantidad = objeto.cantidad : data.cantidad = data.cantidad);
         var cantidadProducto = document.getElementById(objeto.valorId)
-        var objCantidad = { a: objeto.cantidad }
+        var totalProducto = document.getElementById(objeto.precioProducto);
+        prueba(cantidadProducto,objeto.cantidad);
+        prueba(totalProducto,total);
+        cargarTotalesCarrito(true);
+    }
+}
+
+function prueba(element,objeto){
+    var objCantidad = { a: objeto}
         var a = new Binding({
             object: objCantidad,
             property: "a"
         })
-        //.addBinding(myInputElement1, "value", "keyup")
-        a.addBinding(cantidadProducto, "value", "keyup")
-        a.addBinding(cantidadProducto, "innerHTML")
-        //.addBinding(myDOMElement, "innerHTML")
-        var totalProducto = document.getElementById(objeto.precioProducto);
-        var objTotalProducto = { b: total }
-        var b = new Binding({
-            object: objTotalProducto,
-            property: "b"
-        })
-        b.addBinding(totalProducto, "value", "keyup")
-        b.addBinding(totalProducto, "innerHTML")
-        cargarTotalesCarrito(true);
-    }
+        a.addBinding(element, "value", "keyup")
+        a.addBinding(element, "innerHTML")
 }
+
 function sumar(id) {
-    var filter = contenidoJson.filter(data => data.id == id)
+    var filter = contenidoJson.filter(data => data.id == id);
     var cantidad = 0;
     var objeto;
     for (let f of filter) {
-        debugger;
          objeto = new producto(f.Producto, f.descripcion, f.img, f.precio, f.precioTotal, f.cantidad, f.id, f.valorId, f.precioProducto);
     }
     if (objeto.cantidad > 0) {
-        objeto.cantidad = Number(objeto.cantidad) + 1  //objeto.cantidad + 1;
+        objeto.cantidad = Number(objeto.cantidad) + 1 ;
         var total = totalPorProductos(objeto.cantidad, objeto.precio);
     }
     contenidoJson.filter(data => data.id == id ? data.cantidad = objeto.cantidad : data.cantidad = data.cantidad);
     var cantidades = document.getElementById(objeto.valorId);
     var totalProducto = document.getElementById(objeto.precioProducto);
-    var objCantidad = { a: objeto.cantidad }
-    var a = new Binding({
-        object: objCantidad,
-        property: "a"
-    })
-    //.addBinding(myInputElement1, "value", "keyup")
-    a.addBinding(cantidades, "value", "keyup")
-    a.addBinding(cantidades, "innerHTML")
-
-    var objTotalProducto = { b: total }
-    var b = new Binding({
-        object: objTotalProducto,
-        property: "b"
-    })
-    b.addBinding(totalProducto, "value", "keyup")
-    b.addBinding(totalProducto, "innerHTML")
+    prueba(cantidades,objeto.cantidad );
+    prueba(totalProducto,total);
     cargarTotalesCarrito(true);
-
-    //.addBinding(totalProducto, "value", "keyup")
-    //.addBinding(totalProducto, "innerHTML")
 }
 function totalPorProductos(cantidad, precio) {
 

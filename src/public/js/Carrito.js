@@ -16,11 +16,14 @@ function cargarProductosDesdeJson() {
 
 function cargarProductosCarrito(contenidoJson,cargoCarrito){
     var categoria = document.querySelector('#productos');
+    var totalCarrito = document.querySelector('#totalCarrito');
+    var total =0;
     console.log(contenidoJson);
     if (cargoCarrito){
         categoria.innerHTML = ''        
     }
         for(let item of contenidoJson){
+             total = Number(total) + totalPorProductos(Number(item.cantidad),Number(item.precio));
             var totalProductos = totalPorProductos(Number(item.cantidad),Number(item.precio));
             console.log(totalProductos)
             categoria.innerHTML+=`
@@ -59,8 +62,9 @@ function cargarProductosCarrito(contenidoJson,cargoCarrito){
                             <a href="#" onClick="eliminarProducto(${item.idEliminar})">X</a>
                         </td>
                     </tr><!--esto-->`
-                   
     }    
+    totalCarrito.innerHTML =`<h4>Total $${total}</h4>
+                    <button type="button" class=" btn botonCustomCarrito ">Siguiente Paso</button>`
 }
 
 class producto{
@@ -85,6 +89,7 @@ function restar(id){
     }
     if (objeto.cantidad > 0){
         objeto.cantidad= objeto.cantidad - 1;
+        var total = totalPorProductos(objeto.cantidad,objeto.precio);
     }
     console.log(cantidad)
     if (objeto.cantidad == 0){
@@ -94,15 +99,23 @@ function restar(id){
     }else{
         contenidoJson.filter(data=> data.id == id? data.cantidad = objeto.cantidad: data.cantidad = objeto.cantidad);
         var prueba = document.getElementById(objeto.valorId)
-        var obj = {a:objeto.cantidad}
-        new Binding({
-            object: obj,
+        var objCantidad = {a:objeto.cantidad}
+       var a = new Binding({
+            object: objCantidad,
             property: "a"
         })
         //.addBinding(myInputElement1, "value", "keyup")
-        .addBinding(prueba, "value", "keyup")
-        .addBinding(prueba, "innerHTML")
+        a.addBinding(prueba, "value", "keyup")
+        a.addBinding(prueba, "innerHTML")
        //.addBinding(myDOMElement, "innerHTML")
+       var totalProducto = document.getElementById(objeto.precioProducto);
+       var objTotalProducto = {b:total}
+       var b = new Binding({
+           object: objTotalProducto,
+           property: "b"
+       })
+        b.addBinding(totalProducto, "value", "keyup")
+       b.addBinding(totalProducto, "innerHTML")
     }
 }
 function sumar(id){
